@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Outfit:wght@600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Importando o SweetAlert2 -->
+
+  <style>
+    body {
+      background-color: #ffbfaa;
+    }
+
+    .painel {
+      background-color: white;
+      width: 600px;
+      height: 600px;
+      margin: auto;
+      border-radius: 50px;
+      text-align: center;
+      padding-top: 10px;
+      color: #ffbfaa;
+      font-family: 'Lobster', sans-serif;
+      font-size: 20px;
+    }
+
+    #sim {
+      cursor: pointer;
+      height: 50px;
+      width: 60px;
+      border-radius: 10px;
+      background-color: white;
+      font-family: 'Outfit', sans-serif;
+      margin-left: -50px;
+    }
+
+    #nao {
+      margin-left: 10px;
+      position: absolute;
+      cursor: pointer;
+      height: 50px;
+      width: 60px;
+      border-radius: 10px;
+      background-color: white;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    h2 {
+      color: Black;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="painel">
+    <h1>
+      Feliz dois anos, meu amor!!
+    </h1>
+
+    <img src="https://gifdb.com/images/high/cute-couple-cat-sticker-aofak9xp9bqhafd8.webp" width="330px">
+
+    <h2>
+      Aceita passar o resto da vida comigo?
+    </h2>
+
+    <div class="botoes">
+      <button id="sim" onclick="mostrarAlerta()"><strong>Sim!</strong></button>
+      <button id="nao" onclick="fuja()"><strong>Não:(</strong></button>
+    </div>
+
+  </div>
+
+  <script>
+    function fuja() {
+      var botaoNao = document.getElementById("nao");
+
+      var larguraJanela = window.innerWidth;
+      var alturaJanela = window.innerHeight;
+
+      var larguraBotao = botaoNao.offsetWidth;
+      var alturaBotao = botaoNao.offsetHeight;
+
+      var maximoTop = larguraJanela - larguraBotao;
+      var maximoLeft = alturaJanela - alturaBotao;
+
+      var aleatorioTop = Math.floor(Math.random() * maximoTop);
+      var aleatorioLeft = Math.floor(Math.random() * maximoLeft);
+
+      botaoNao.style.left = aleatorioTop + "px";
+      botaoNao.style.top = aleatorioLeft + "px";
+    }
+
+    function mostrarAlerta() {
+      Swal.fire({
+        icon: 'success',
+        title: 'EEEEEEEEEEE Você fez a mais sábia escolha!',
+        text: 'Eu te amo muito, vamos construir uma vida inteira juntos ❤️'
+      });
+    }
+  </script>
+
+</body>
+
+</html>
